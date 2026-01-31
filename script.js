@@ -6,15 +6,22 @@ block.setAttribute("id", "block");
 button.addEventListener("click", () => {
   generalDiv.textContent = "";
   number = prompt("введи число от 1 до 100");
-  let secondNumber = number * number;
+  if (number <= 100 && number >= 1) {
+    let secondNumber = number * number;
 
-  for (let i = 0; i < secondNumber; i++) {
-    let block = document.createElement("div");
-    block.setAttribute("id", "block");
-    block.style.width = 960 / number + "px";
-    block.style.height = 960 / number + "px";
+    for (let i = 0; i < secondNumber; i++) {
+      let block = document.createElement("div");
+      block.setAttribute("id", "block");
+      block.style.width = 960 / number + "px";
+      block.style.height = 960 / number + "px";
 
-    generalDiv.appendChild(block);
+      generalDiv.appendChild(block);
+    }
+  } else {
+    let errorText = document.createElement("h1");
+    errorText.getAttribute("id", "error-text");
+    errorText.textContent = "Error";
+    generalDiv.appendChild(errorText);
   }
 });
 
