@@ -26,5 +26,9 @@ button.addEventListener("click", () => {
 });
 
 generalDiv.addEventListener("mousemove", (e) => {
-  e.target.style.background = "blue";
+  rundomNumber = Math.floor(Math.random() * 256);
+  secondRundomNumber = Math.floor(Math.random() * 256);
+  thirdRundomNumber = Math.floor(Math.random() * 256);
+  let color = `rgb(${rundomNumber},${secondRundomNumber}, ${thirdRundomNumber})`;
+  e.target.style.background = color;
 });
