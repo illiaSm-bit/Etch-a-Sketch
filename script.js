@@ -26,9 +26,21 @@ button.addEventListener("click", () => {
 });
 
 generalDiv.addEventListener("mousemove", (e) => {
-  rundomNumber = Math.floor(Math.random() * 256);
-  secondRundomNumber = Math.floor(Math.random() * 256);
-  thirdRundomNumber = Math.floor(Math.random() * 256);
-  let color = `rgb(${rundomNumber},${secondRundomNumber}, ${thirdRundomNumber})`;
-  e.target.style.background = color;
+  e.target.style.background = "green";
+  e.target.dataset.opacity;
+
+  if (e.target.dataset.opacity === undefined) {
+    let hui = 0;
+    e.target.dataset.opacity = hui;
+    e.target.style.opacity = hui;
+  } else if (e.target.dataset.opacity >= 1) {
+    let hui = 1;
+    e.target.dataset.opacity = hui;
+    e.target.style.opacity = hui;
+  } else {
+    let hui = Number(e.target.dataset.opacity);
+    hui += 0.1;
+    e.target.dataset.opacity = hui;
+    e.target.style.opacity = hui;
+  }
 });
